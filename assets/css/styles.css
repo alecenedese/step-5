@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0 15px;
+  margin: 0;
+}
+
+
+.container {
+  display: grid;
+  max-width: 1240px;
+  margin: 0 auto;
+  grid-template-columns: 1fr 1fr 1fr 2.5fr;
+  grid-template-rows: 1.2fr 0.9fr 0.8fr 0.8fr;
+  grid-template-areas:
+    "header header header header"
+    "main main main C"
+    "B2 B3 B4 C"
+    "footer footer footer footer";
+  grid-gap: 0.9rem;
+  color: #000;
+  animation: resize 3000ms ease infinite both;
+}
+
+header {
+  background: red;
+  grid-area: header;
+  padding: 6rem 7rem;
+  margin-bottom: 1rem;
+
+}
+
+p {
+  font-size: 3rem;
+  animation-duration: 3s;
+  animation-name: slidein;
+}
+
+.btn1 {
+  background-color: #000;
+  color: #fff;
+  padding: 0.5rem 3rem;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 9px;
+  border: #000;
+  margin-top: 1.6rem;
+  text-align: center;
+  animation-duration: 3s;
+  animation-name: slideBtn;
+}
+
+.btn2 {
+  background-color: #fff;
+  color: #000;
+  padding: 0.5rem 3rem;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 9px;
+  border: #fff;
+  margin-top: 1.6rem;
+  margin-left: 0.9rem;
+  text-align: center;
+  animation-duration: 3s;
+  animation-name: slideBtn;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@keyframes slideBtn {
+  from {
+    margin-top: 0%;
+  }
+
+  to {
+    margin-top: 1%;
+  }
+}
+
+main {
+  background: yellow;
+  grid-area: main;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.1rem;
+
+}
+
+.C {
+  background: #3bf3b1;
+  grid-area: C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.1rem;
+}
+
+.B2 {
+  background: yellow;
+  grid-area: B2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.1rem;
+}
+
+.B3 {
+  background: yellow;
+  grid-area: B3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.1rem;
+}
+
+.B4 {
+  background: yellow;
+  grid-area: B4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.1rem;
+}
+
+footer {
+  background: #0fd4ff;
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.1rem;
+  margin-top: 1rem;
+}
+
+
+@media only screen and (max-width: 550px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1.5fr 1.5fr 1fr 1fr 1fr 1.5fr;
+    grid-template-areas:
+      "header header"
+      "C C"
+      "main main"
+      "B2 B3"
+      "B4 B4"
+      "footer footer";
+  }
+
+  header {
+    padding: 0.5rem;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  .btn1 {
+    width: 100%;
+    margin: 4rem 0 0 0;
+  }
+
+  .btn2 {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+}
